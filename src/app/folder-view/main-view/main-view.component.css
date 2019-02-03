@@ -1,0 +1,76 @@
+.file-explorer{
+    border-right: 1px solid #2ab6bc;
+    padding-right: 0;
+    overflow: auto;
+
+}
+
+
+
+nav{
+    min-height: 54px;
+}
+
+.file-viewer{
+    background: white;
+    padding-left: 0; 
+    padding-right: 0;
+}
+
+.row{
+    height: 100%;
+}
+
+label{
+    color: white;
+}
+
+.explorer-subview{
+   
+}
+
+.m-t-30{
+    margin-top: 30px;
+}
+
+.card{
+    margin-top: 15px;
+    transition: box-shadow 280ms cubic-bezier(.4,0,.2,1);
+    display: block;
+    position: relative;
+    padding: 16px;
+    border-radius: 4px;
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12)
+}
+
+.create-button{
+    background: transparent;
+    border: 1px solid black;
+    color: black;
+    transition: all 0.1s;
+    margin-left: 3%;
+}
+
+.input-text{
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+}
+
+.input-card{
+    padding: 0;
+    height: 50px;
+
+}
+
+.delete-button{
+    color: red;
+    cursor: pointer;
+}
+
+.form-inline, .input-group{
+    width: 100%;
+}
+
+
+

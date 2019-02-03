@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+
+html,
+body {
+  height: 100%;
+  width: 100% ;
+  overflow: auto;
+}
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body * {
+    max-width: 100%;
+}

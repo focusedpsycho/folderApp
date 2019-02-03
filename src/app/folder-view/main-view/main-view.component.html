@@ -1,0 +1,71 @@
+<div class="row">
+  <div class="col-md-3 col-sm-6 col-xs-6 file-explorer">
+
+   
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <label for="">File Explorer</label>
+    </nav>
+    <div class="explorer-subview m-t-30">
+        <app-explorer-view [folderData] = "folderView" [parentChain] = "[]"></app-explorer-view>
+    </div>
+    
+  </div>
+  
+  <div class="col-md-9 col-sm-6 col-xs-6 file-viewer" >
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #e3f2fd;">
+      <form class="form-inline">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fa fa-folder folder-icon" aria-hidden="true"></i></span>
+          </div>
+          <input type="text" class="form-control" [(ngModel)] = "workingDirectory" (keydown)= "goToPath($event)" [ngModelOptions]="{standalone: true}">
+        </div>
+      </form>
+    </nav>
+
+    <div class="alert alert-success m-t-30" *ngIf="showPathError">
+        Incorrect File Path!
+      </div>
+
+    <div class="container m-t-30">
+     
+      <button class="btn btn-primary" (click)="goBack()" [disabled]="!parentReferenceChain.length">Back</button>
+      <button class="btn  create-button" [hidden]="createFolderFlag" (click)="createFolder()"> <i class="fa fa-plus" aria-hidden="true"></i> 
+        Create Folder</button>
+
+        <button class="btn  create-button" [hidden]="!createFolderFlag" (click)="cancelCreate()"> <i class="fa fa-times" aria-hidden="true"></i> 
+          Cancel</button>
+
+          <div class="alert alert-success m-t-30" *ngIf="showLengthError">
+              Name must contain Atleast one character!
+            </div>
+
+            <div class="alert alert-success m-t-30" *ngIf="showExistsError">
+                Folder with name {{newFileName}} already exists
+              </div>
+
+      <div class="folder-content">
+        
+          <div class="card input-card" *ngIf="createFolderFlag">
+              <input type="text" class="input-text"  placeholder="Give a Name and press Enter" [(ngModel)] = "newFileName" (keydown)= "registerFileName($event)">
+          </div>
+      
+      <div class="folder" *ngFor="let folder of selectedFolder | keyvalue">
+          <div class="card" (click)="openFolder(folder.key)">
+              <img src="assets/folder-icon.svg" class="folder-icon" alt="">
+              {{folder.key}}
+
+              <span class="pull-right delete-button" (click)="deleteFolder(folder.key)"><i class="fa fa-trash" aria-hidden="true"></i></span>
+          </div>
+
+       
+          
+      </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,17 @@
+ul{
+   list-style: none;
+}
+
+li{
+    cursor: pointer;
+}
+
+.folder-icon{
+    color: lightcoral;
+}
+
+.arrow-down{
+    margin-right: 8px;
+    font-size: 15px;
+}
+

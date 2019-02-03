@@ -1,0 +1,19 @@
+<ul>
+  <li class="folder-container" *ngFor="let folder of folderData | keyvalue; let index = index">
+      <span class="arrow-down" *ngIf="!clicked[index]">
+          <i class="fa fa-angle-down"  (click)="toggleClick(index, $event)" aria-hidden="true"></i>
+      </span>
+
+      <span class="arrow-down" *ngIf="clicked[index]">
+          <i class="fa fa-angle-up" (click)="toggleClick(index, $event)" aria-hidden="true"></i>
+      </span>
+      
+
+      <span (click)="openFolder(folder.key)">
+          <i *ngIf="!clicked[index]" class="fa fa-folder folder-icon" aria-hidden="true"></i> 
+          <i *ngIf="clicked[index]" class="fa fa-folder-open folder-icon" aria-hidden="true"></i>
+          {{folder.key}}
+      </span>
+    <app-explorer-view *ngIf="clicked[index]" [folderData]="folder.value" [parentChain] = "getParentChain(folder.key)"></app-explorer-view>
+  </li>
+</ul>
