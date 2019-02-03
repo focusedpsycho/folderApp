@@ -50,8 +50,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "folderStructureApp:build",
-            "port": 80
+            "browserTarget": "folderStructureApp:build"
           },
           "configurations": {
             "production": {
