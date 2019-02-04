@@ -48,7 +48,6 @@ export class ExplorerViewComponent implements OnInit {
     }
 
     newParentChain.push(parent);
-    
    this.messagingService.chooseAFolderPath(newParentChain);
   }
 
