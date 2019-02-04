@@ -5,6 +5,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="
     position: fixed;
     width: 100%;
+    z-index: 1000;
 ">
       <label for="">File Explorer</label>
     </nav>
@@ -15,7 +16,9 @@
   </div>
   
   <div class="col-md-9 col-sm-6 col-xs-6 file-viewer" >
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #e3f2fd;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="position: fixed;
+    width: 100%;
+    z-index: 1000; padding-right: 10%;">
       <form class="form-inline">
         <div class="input-group">
           <div class="input-group-prepend">
@@ -26,11 +29,11 @@
       </form>
     </nav>
 
-    <div class="alert alert-success m-t-30" *ngIf="showPathError">
+    <div class="alert alert-success m-t-60" *ngIf="showPathError">
         Incorrect File Path!
       </div>
 
-    <div class="container m-t-30">
+    <div class="container m-t-60">
      
       <button class="btn btn-primary" (click)="goBack()" [disabled]="!parentReferenceChain.length">Back</button>
       <button class="btn  create-button" [hidden]="createFolderFlag" (click)="createFolder()"> <i class="fa fa-plus" aria-hidden="true"></i> 
@@ -39,11 +42,11 @@
         <button class="btn  create-button" [hidden]="!createFolderFlag" (click)="cancelCreate()"> <i class="fa fa-times" aria-hidden="true"></i> 
           Cancel</button>
 
-          <div class="alert alert-success m-t-30" *ngIf="showLengthError">
+          <div class="alert alert-success m-t-60" *ngIf="showLengthError">
               Name must contain Atleast one character!
             </div>
 
-            <div class="alert alert-success m-t-30" *ngIf="showExistsError">
+            <div class="alert alert-success m-t-60" *ngIf="showExistsError">
                 Folder with name {{newFileName}} already exists
               </div>
 
